@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action ="" id ="f1">
+        Username:
+        <input type="text" name="" id="t1"><br>
+        Password:
+        <input type="password" name="" id="t2"><br>
+        Confirm Password:
+        <input type="password" name="" id="t3"><br>
+        Phone No:
+        <input type="number" name="" id="t4"><br>
+        <input type="button" value="registe" onclick="validation()">
+        <span id ="a1">
+        </span><br><br>
+    </form>
+    <script>
+        function validation(){
+            var username = document.getElementById("t1").value;
+            var pwd= document.getElementById("t2").value;
+            var cpwd = document.getElementById("t3").value;
+            var phoneno = document.getElementById("t4").value;
+            var r=" ";
+            if (username.length==0){
+                r += "username cannot be empty" +"<br>";
+            }
+            if(pwd.length==0){
+                r += "password cannot be empty" +"<br>";
+        }
+        if(cpwd.length==0){
+            r += " confirm password cannot be empty" +"<br>";
+        }
+        if(pwd != cpwd)
+        {
+            r += "  password and confirm password cannot be match" +"<br>";
+        }
+        if(pwd.length <8 || pwd.length>15){
+            r += "  password length should be 8 & 15" +"<br>";
+        }
+        if (phoneno.length!=0){
+            if(phoneno.lengt!=10)
+            {
+                r += "  phono no should be 10 digits" +"<br>";
+            }
+            else{
+                r+= "phoneno can not be empty" +"<br>"
+            }
+        }
+        document.getElementById("a1").innerHTML=r;
+    }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>
